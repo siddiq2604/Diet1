@@ -90,7 +90,7 @@ st.markdown("""
 # Initialize Groq and Agents
 os.environ["GROQ_API_KEY"] = st.secrets.GROQ_API_KEY
 GROQ_API_KEY = os.environ["GROQ_API_KEY"]
-llm = ChatGroq(temperature=0, groq_api_key=GROQ_API_KEY, model_name="groq/llama-3.3-70b-versatile")
+llm = ChatGroq(temperature=0.0, groq_api_key=GROQ_API_KEY, model_name="groq/llama-3.3-70b-versatile")
 
 diet_agent = Agent(
     role='Nutrition Expert',
