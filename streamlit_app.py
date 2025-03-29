@@ -12,7 +12,7 @@ import os
 st.set_page_config(
     page_title="Fitness & Nutrition Planner 💪",
     page_icon="🥗",
-    layout="wide"
+    layout= "wide"
 )
 
 # Apply custom CSS for background and card styling
@@ -90,12 +90,12 @@ st.markdown("""
 # Initialize Groq and Agents
 os.environ["GROQ_API_KEY"] = st.secrets.GROQ_API_KEY
 GROQ_API_KEY = os.environ["GROQ_API_KEY"]
-llm = ChatGroq(temperature=0.0, groq_api_key=GROQ_API_KEY, model_name="groq/llama-3.3-70b-versatile")
+llm = ChatGroq(temperature=0, groq_api_key=GROQ_API_KEY, model_name="groq/llama-3.3-70b-versatile")
 
 diet_agent = Agent(
     role='Nutrition Expert',
     goal='Generate personalized diet plans based on user inputs',
-    backstory='Expert in nutrition science and meal planning with focus on Indian cuisine',
+    backstory= 'Expert in nutrition science and meal planning with focus on Indian cuisine',
     verbose=True,
     llm=llm
 )
@@ -103,7 +103,7 @@ diet_agent = Agent(
 workout_agent = Agent(
     role='Fitness Trainer',
     goal='Create effective workout plans tailored to user goals',
-    backstory='Experienced fitness coach specializing in home workouts',
+    backstory = 'Experienced fitness coach specializing in home workouts',
     verbose=True,
     llm=llm
 )
